@@ -1,0 +1,35 @@
+[
+    {
+      "problem": "Write a fuction that takes a list of integers and returns the sum of all even numbers in the list",
+      "solution": "def sum_even(numbers): \n    return sum(num for num in numbers if num % 2 == 0)"
+    },
+    {
+      "problem": "Write a function that takes a list of strings and returns a list of those strings that have more than 3 characters",
+      "solution": "def filter_long_strings(strings): \n    return [string for string in strings if len(string) > 3]"
+    },
+    {
+      "problem": "Write a function that takes a list of numbers and returns a new list with only the unique elements",
+      "solution": "def unique_numbers(numbers): \n    return list(set(numbers))"
+    },
+    {
+      "problem": "Write a function that finds the most frequent element in a list.",
+      "solution": "from collections import Counter\n\ndef most_frequent(lst): \n    return Counter(lst).most_common(1)[0][0]"
+    },
+    {
+      "problem": "Write a function that returns True if two given strings are rotations of each other.",
+      "solution": "def are_rotations(s1, s2): \n    return len(s1) == len(s2) and s1 in (s2 + s2)"   
+    },
+    {
+      "problem": "Write a function to find the maximum value in a binary tree.",
+      "solution": "def find_max(root): \n     if not root: \n   return float('-inf') \n   return max(root.val, find_max(root.left), find_max(root.right))"
+    },
+    {
+      "problem": "Create a function that checks if a string is a palindrome (reads the same forwards and backwards).",
+      "solution": "def is_palindrome(text):\n    text = text.lower().replace(' ', '')\n    return text == text[::-1]"
+    },
+    {
+      "problem": "Write a function to find the factorial of a number.",
+      "solution": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)"
+    }
+  ]
+  
