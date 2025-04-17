@@ -67,7 +67,7 @@ def create_summarization_benchmark(article_file):
         task = {
             "task_type": "summarization",
             "prompt": f"TSummarize the following text in a few sentences: \n\n{a['text']} \n\nSummary: ",
-            "ground_truth": a.get['summary','']
+            "ground_truth": a.get('summary','')
         }
         tasks.append(task)
     
@@ -120,8 +120,8 @@ def load_all_benchmarks(data_dir="data"):
     for filename, creat_func in benchmark_functions.items():
         filepath = os.path.join(data_dir, filename)
         if os.path.exists(filepath):
-            benchmark_name = filtname.split('_')[0]
-            benchmarks[benchmark_name] = create_func(filepath)
+            benchmark_name = filename.split('_')[0]
+            benchmarks[benchmark_name] = creat_func(filepath)
             print(f"Loaded {benchmark_name} benchmark with {len(benchmarks[benchmark_name])} tasks")
         else:
             print(f"Warning: Benchmark file {filepath} not found")
