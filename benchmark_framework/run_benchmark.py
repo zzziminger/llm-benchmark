@@ -10,8 +10,8 @@ def main():
     # Creat results directory
     os.makedirs("results",exist_ok=True)
     # Define models to benchmark
-    #models = ['phi', 'mistral', 'llama3:8b']
-    models = ['phi']
+    models = ['phi', 'mistral', 'llama3:8b']
+
 
     print ("Starting LLM benchmarking")
     start_time = time.time()
