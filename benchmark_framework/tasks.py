@@ -125,5 +125,5 @@ def load_all_benchmarks(data_dir="data"):
             print(f"Loaded {benchmark_name} benchmark with {len(benchmarks[benchmark_name])} tasks")
         else:
             print(f"Warning: Benchmark file {filepath} not found")
-    return benchmarks 
 
+    return benchmarks 
