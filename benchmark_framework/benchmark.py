@@ -62,6 +62,9 @@ class LLMBenchmark:
 
                 end_time = time.time()
                 end_memory = psutil.Process().memory_info().rss / (1024 * 1024)
+
+                self._stop_thinking = True
+                thinking_thread.join()
         
                 latency = end_time - start_time
                 memory_increase = max(0, end_memory - start_memory)
@@ -87,6 +90,7 @@ class LLMBenchmark:
                     score_str = f"{score: .2f}" if isinstance(score, float) else str(score)
                     emoji = "✅" if score > 0.7 else "❕" if score > 0.3 else "❌" 
                     print(f"{emoji} Score: {score_str}")
+                results.append(result)
                     
             except Exception as e:
 
@@ -193,9 +197,9 @@ class LLMBenchmark:
         for model, tasks in self.results.items():
             summary[model] = {}
             for task_name, results in tasks.items():
-                latencies = [r["latency"] for r in results]
-                memories = [r["memory_kb"] for r in results]
-                scores = [r["score"] for r in results if r["score"] is not None]
+                latencies = [r["latency"] for r in results if "latency" in r]
+                memories = [r["memory_usage"] for r in results if "memory_usage" in r]
+                scores = [r["score"] for r in results if "score" in r]
                 summary[model][task_name] = {
                     "avg_latency": sum(latencies) / len(latencies),
                     "avg_memory_kb": sum(memories) / len(memories),
