@@ -1,10 +1,13 @@
 import time
 import json
 import os
+from pathlib import Path
 import psutil
 from difflib import SequenceMatcher
 import ollama
 import threading
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 
@@ -15,8 +18,7 @@ class LLMBenchmark:
         self.results = {}
         os.makedirs('results', exist_ok=True)
 
-    #def load_tasks(self, task_dict):
-    #   self.tasks = task_dict
+
 
     def run_benchmarks(self):
         for model in self.models:
@@ -27,8 +29,8 @@ class LLMBenchmark:
                 print(f" Running task: {task_name}")
                 self.results[model][task_name] = self.benchmark_task(model, task_data)
 
-                self._save_results(f"results/{model}_{task_name}_results.json",
-                                   self.results[model][task_name])
+                self._save_results(model, task_name, self.results[model][task_name])
+
         return self.results
 
     def benchmark_task(self, model, task_data):
@@ -60,6 +62,9 @@ class LLMBenchmark:
 
                 end_time = time.time()
                 end_memory = psutil.Process().memory_info().rss / (1024 * 1024)
+
+                self._stop_thinking = True
+                thinking_thread.join()
         
                 latency = end_time - start_time
                 memory_increase = max(0, end_memory - start_memory)
@@ -85,6 +90,7 @@ class LLMBenchmark:
                     score_str = f"{score: .2f}" if isinstance(score, float) else str(score)
                     emoji = "✅" if score > 0.7 else "❕" if score > 0.3 else "❌" 
                     print(f"{emoji} Score: {score_str}")
+                results.append(result)
                     
             except Exception as e:
 
@@ -111,19 +117,19 @@ class LLMBenchmark:
             idx += 1
             time.sleep(0.1)
 
-    def evaluate(self, response, ground_truth, task_type = 'general'):
+    def evaluate(self, response, ground_truth, task_type):
         
-        if task_type =="qa":
+        if task_type == "qa":
             return int(ground_truth.lower() in response.lower())
         
         elif task_type == "code":
-            return self.code.similarity(response, ground_truth)
+            return self.code_similarity(response, ground_truth)
         
         elif task_type == "summarization":
-            return self.text.overlap(response, ground_truth)
+            return self.text_overlap(response, ground_truth)
         
         elif task_type == "reasoning":
-            return self.text.similarity(response, ground_truth)
+            return self.text_similarity(response, ground_truth)
         
         else:
             return self.text_similarity(response,ground_truth)
@@ -160,13 +166,13 @@ class LLMBenchmark:
         a_clean = ''.join(a.split())
         b_clean = ''.join(b.split())
 
-        if not a_clean or not b_clean:
-            return 0.0
-        
-        m, n = len(a_clean), len(b_clean)
+        # Use TfidfVectorizer to convert code into vectors and calculate cosine similarity
+        vectorizer = TfidfVectorizer()
+        tfidf_matrix = vectorizer.fit_transform([a_clean, b_clean])
 
-        if m > 1000 or b > 1000:
-            return SequenceMatcher(None, m, n.ratio())
+        similarity_matrix = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])
+
+        return similarity_matrix[0][0]
 
     def _display_interaction(self, prompt, response, score=None, latency=None):
         separator = "─" * 60
@@ -180,7 +186,9 @@ class LLMBenchmark:
         print(f"\033[95m{separator}\033[0m")
 
     def _save_results(self, model, task_name, data):
-        filename = self.results_dir / f"{model.replace(':', '_')}_{task_name}_results.json"
+        results_folder = 'results'
+        os.makedirs(results_folder, exist_ok=True)
+        filename = Path(results_folder) / f"{model.replace(':', '_')}_{task_name}.json"
         with open(filename, "w") as f:
             json.dump(data, f, indent=2)
 
@@ -189,9 +197,9 @@ class LLMBenchmark:
         for model, tasks in self.results.items():
             summary[model] = {}
             for task_name, results in tasks.items():
-                latencies = [r["latency"] for r in results]
-                memories = [r["memory_kb"] for r in results]
-                scores = [r["score"] for r in results if r["score"] is not None]
+                latencies = [r["latency"] for r in results if "latency" in r]
+                memories = [r["memory_usage"] for r in results if "memory_usage" in r]
+                scores = [r["score"] for r in results if "score" in r]
                 summary[model][task_name] = {
                     "avg_latency": sum(latencies) / len(latencies),
                     "avg_memory_kb": sum(memories) / len(memories),

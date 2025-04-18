@@ -17,7 +17,7 @@ def create_qa_benchmark(questions_file):
     tasks = []
     for q in questions:
         task = {
-            "task_type": "qa",
+            "type": "qa",
             "prompt": f"Question: {q['question']}\nAnswer: ",
             "ground_truth": q['answer']
         }
@@ -41,7 +41,7 @@ def create_code_benchmark(problems_file):
     tasks = []
     for p in problems:
         task = {
-            "task_type": "code",
+            "type": "code",
             "prompt": f"Write a function to solve the following problem: \n\n {p['problem']}\n \n Your solution (in Python): \n",
             "ground_truth": p.get('solution',''),
         }
@@ -65,8 +65,8 @@ def create_summarization_benchmark(article_file):
     tasks = []
     for a in articles:
         task = {
-            "task_type": "summarization",
-            "prompt": f"TSummarize the following text in a few sentences: \n\n{a['text']} \n\nSummary: ",
+            "type": "summarization",
+            "prompt": f"Summarize the following text in a few sentences: \n\n{a['text']} \n\nSummary: ",
             "ground_truth": a.get('summary','')
         }
         tasks.append(task)
@@ -90,8 +90,8 @@ def create_reasoning_benchmark(contexts_file):
     tasks = []
     for c in context:
         task = {
-            "task_type": "reasoning",
-            "prompt": f"{p['context']} \n\nQuestion: {p['question']}\n\nAnswer:  ",
+            "type": "reasoning",
+            "prompt": f"{c['context']} \n\nQuestion: {c['question']}\n\nAnswer:  ",
             "ground_truth": c['answer']
         }
         tasks.append(task)
@@ -125,5 +125,5 @@ def load_all_benchmarks(data_dir="data"):
             print(f"Loaded {benchmark_name} benchmark with {len(benchmarks[benchmark_name])} tasks")
         else:
             print(f"Warning: Benchmark file {filepath} not found")
-
     return benchmarks 
+

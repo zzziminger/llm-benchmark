@@ -1,16 +1,17 @@
 import os
 import time
 from benchmark import LLMBenchmark  
-from visualization import create_visualizations  
+#from visualization import create_visualizations  
 from tasks import load_all_benchmarks 
-from report import generate_report
+#from report import generate_report
 
 def main():
 
     # Creat results directory
     os.makedirs("results",exist_ok=True)
     # Define models to benchmark
-    models = ['phi', 'mistral', 'llama3:8b']
+    #models = ['phi', 'mistral', 'llama3:8b']
+    models = ['phi']
 
     print ("Starting LLM benchmarking")
     start_time = time.time()
@@ -28,10 +29,10 @@ def main():
     summary = benchmark.get_summary_statistics()
 
     # Generate visualizations based on the summary statistics
-    create_visualizations(summary, results_dir="benchmark_results")
+    #create_visualizations(summary, results_dir="benchmark_results")
 
     # Generate report
-    generate_report(summary, results)
+    #generate_report(summary, results)
 
     # Print completion message and results location
     print(f"Benchmarking completed successfully!")
@@ -39,3 +40,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
