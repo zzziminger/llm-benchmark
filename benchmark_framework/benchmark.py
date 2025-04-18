@@ -119,13 +119,13 @@ class LLMBenchmark:
             return int(ground_truth.lower() in response.lower())
         
         elif task_type == "code":
-            return self.code.similarity(response, ground_truth)
+            return self.code_similarity(response, ground_truth)
         
         elif task_type == "summarization":
-            return self.text.overlap(response, ground_truth)
+            return self.text_overlap(response, ground_truth)
         
         elif task_type == "reasoning":
-            return self.text.similarity(response, ground_truth)
+            return self.text_similarity(response, ground_truth)
         
         else:
             return self.text_similarity(response,ground_truth)
