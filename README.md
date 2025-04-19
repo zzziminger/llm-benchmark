@@ -2,7 +2,7 @@
 
 In this project, we’ll develop a robust system to benchmark Large Language Models (LLMs) running locally on our laptops. The system will evaluate the performance of three models ('phi', 'mistral', 'llama3:8b') across a range of tasks (Q&A, coding, summarization, reasoning) and display the results visually—featuring an intuitive interface that highlights the model's thought process in real-time.
 
-## Directory Structure and Description
+\section*{Directory Structure and Description}
 
 - **benchmark_framework/**: Contains the core components for the benchmarking system.
   - `benchmark.py`: Implements the benchmarking engine that runs the tests.
@@ -19,6 +19,29 @@ In this project, we’ll develop a robust system to benchmark Large Language Mod
   
 - **run_benchmark.py**: The main script used to execute the benchmarking process.
 
+
+\section*{Implementation Guide}
+
+\subsection*{Part 1: Environment Setup}
+
+\textbf{Install Ollama}
+\begin{verbatim}
+curl -fsSL https://ollama.com/install.sh | sh
+\end{verbatim}
+
+\textbf{Pull some lightweight models}
+\begin{verbatim}
+ollama pull phi
+ollama pull mistral
+ollama pull llama3:8b
+\end{verbatim}
+
+\textbf{Setup your Python environment}
+\begin{verbatim}
+python -m venv venv
+source venv/bin/activate  % On Windows: venv\Scripts\activate
+pip install matplotlib seaborn pandas numpy tqdm ollama
+\end{verbatim}
 
 
 
