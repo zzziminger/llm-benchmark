@@ -187,7 +187,8 @@ class LLMBenchmark:
         return overlap / max(len(words1),len(words2))
 
     def text_overlap(self, a, b):
-        a_words = set(a.lower().split())
+        a_short = self.shorten_response(a)
+        a_words = set(a_short.lower().split())
         b_words = set(b.lower().split())
 
         if not a_words or not b_words:
@@ -234,6 +235,14 @@ class LLMBenchmark:
         similarity_matrix = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])
 
         return similarity_matrix[0][0]
+    
+    def shorten_response(self, response, max_sentences=3, max_words=100):
+    # Take the first few sentences, then truncate to max_words
+        sentences = response.strip().split('.')
+        selected = '.'.join(sentences[:max_sentences])
+        words = selected.split()
+        return ' '.join(words[:max_words])
+
 
     def _display_interaction(self, prompt, response, score=None, latency=None):
         separator = "─" * 60
