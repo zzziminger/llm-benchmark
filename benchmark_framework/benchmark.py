@@ -35,6 +35,7 @@ class LLMBenchmark:
 
     def benchmark_task(self, model, task_data):
         results = []
+        error_log = []
 
         print(f"\n{'='*88}")
         print(f" Testing model: {model}")
@@ -58,7 +59,10 @@ class LLMBenchmark:
                 thinking_thread.daemon = True
                 thinking_thread.start()
 
-                response = ollama.generate(model=model, prompt=prompt)
+                try: 
+                    response = ollama.generate(model = model, prompt= prompt, options={"timeout":20})
+                except Exception as api_err:
+                    raise RuntimeError(f"Ollama API call failed: {str(api_err)}")
 
                 end_time = time.time()
                 end_memory = psutil.Process().memory_info().rss / (1024 * 1024)
@@ -68,6 +72,10 @@ class LLMBenchmark:
         
                 latency = end_time - start_time
                 memory_increase = max(0, end_memory - start_memory)
+
+                output = response.get("response","").strip()
+                if len(output) == 0:
+                    raise ValueError("Model returned an empty response.")
 
                 print(f" Response: \n{'-'*40}\n{response['response']}\n{'-'*40}")
 
@@ -92,17 +100,50 @@ class LLMBenchmark:
                     print(f"{emoji} Score: {score_str}")
                 results.append(result)
                     
-            except Exception as e:
+            except MemoryError:
+                self._stop_thinking = True
+                thinking_thread.join()
+                print("\n❌ MemoryError: Not enough memory to complete the task.")
+                error_log.append({
+                    "prompt_id":i,
+                    "score":0,
+                    "reason": "MemoryError - Task esceeded available memory",
+                    "actual":""
+                })
 
-                print(f"\n❌ Error: {str(e)}")
-                result = {
-                    "prompt_id": i,
-                    "prompt": prompt,
-                    "error": str(e)
-                }
+            except RuntimeError as e:
+                self._stop_thinking = True
+                thinking_thread.join()
+                print(f"\n❌ RuntimeError: {str(e)}")
+                error_log.append({
+                    "prompt_id":i,
+                    "score":0,
+                    "reason": str(e),
+                    "actual":""
+                })
+
+            except Exception as e:
+                self._stop_thinking = True
+                thinking_thread.join()
+                print(f"\n❌ Unexpected Error: {str(e)}")
+                error_log.append({
+                    "prompt_id":i,
+                    "score":0,
+                    "reason": f"Unhandled error: {str(e)}",
+                    "actual":""
+                }) 
                 print("\n" + "-" *80)
-                time.sleep(0.5)
-                results.append(result)
+                time.sleep(0.5) 
+
+        if error_log:
+            os.makedirs("results", exist_ok=True)
+            with open("results/error_log.txt", "w") as f:
+                for err in error_log:
+                    f.write(f"Prompt ID: {err['prompt_id']}\n")
+                    f.write(f"Reason: {err['reason']}\n")
+                    f.write(f"Model Answer: {err['actual']}\n")
+                    f.write(f"Score: {err['score']}\n")
+                    f.write("-" * 60 + "\n")     
 
         return results 
 
@@ -126,10 +167,10 @@ class LLMBenchmark:
             return self.code_similarity(response, ground_truth)
         
         elif task_type == "summarization":
-            return self.text_overlap(response, ground_truth)
+            return self.text_similarity(response, ground_truth)
         
         elif task_type == "reasoning":
-            return self.text_similarity(response, ground_truth)
+            return self.text_overlap(response, ground_truth)
         
         else:
             return self.text_similarity(response,ground_truth)
