@@ -199,9 +199,29 @@ class LLMBenchmark:
 
         if precision + recall == 0:
             return 0
+        
+        f1_score = 2 * (precision * recall) / (precision + recall)
+        concept_overlap = self.conceptual_overlap(a, b)
+
+        return f1_score * (1 + concept_overlap)
     
-        return 2 * (precision * recall) / (precision + recall)
+    def conceptual_overlap(self, a, b):
+        key_concepts_a = set(self.extract_key_concepts(a))
+        key_concepts_b = set(self.extract_key_concepts(b))
+
+        if not key_concepts_a or not key_concepts_b:
+            return 0.0
+        
+        overlap = len(key_concepts_a.intersection(key_concepts_b))
+        
+        return overlap / max(len(key_concepts_a), len(key_concepts_b))
     
+    def extract_key_concepts(self, text):
+        common_stopwords = set([
+        'is', 'the', 'a', 'and', 'of', 'or', 'in', 'to', 'on', 'for', 'with', 'as', 'by', 'that'])
+        words = text.lower().split()
+        return [word for word in words if word not in common_stopwords]
+
 
     def code_similarity(self, a, b):
         a_clean = ''.join(a.split())
