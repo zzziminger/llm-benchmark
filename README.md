@@ -21,10 +21,8 @@ In this project, we’ll develop a robust system to benchmark Large Language Mod
 
 ## Implementation Guide
 
-### Part 1: Environment Setup
 
-#### Install Ollama
-To install Ollama, run the following command:
+First, we install Ollama:
 
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
