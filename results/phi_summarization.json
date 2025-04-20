@@ -1,0 +1,57 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "Summarize the following text in a few sentences: \n\nIn recent years, there has been a growing concern about the impact of technology on social interactions. With the rise of smartphones, social media, and online communication platforms, face-to-face conversations are becoming less frequent. While technology has undoubtedly brought many conveniences, such as easier access to information and improved global connectivity, it has also led to a decrease in meaningful personal interactions. Many people are spending more time online, engaging in virtual interactions, which often lack the emotional depth and richness of in-person communication. This shift has raised questions about the long-term effects on relationships, mental health, and overall well-being. \n\nSummary: ",
+    "response": " The text discusses how technology is affecting social interactions by causing a decrease in face-to-face conversations due to the rise of smartphones, social media, and online communication platforms. It highlights both the convenience and connectivity that technology offers but also raises concerns about its impact on meaningful personal interactions, relationships, mental health, and overall well-being.\n",
+    "latency": 1.4635705947875977,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 55,
+    "tokens_per_second": 37.57932838762857,
+    "score": 0.3469387755102041,
+    "ground_truth": "Technology has made social interactions less frequent, as more people rely on smartphones and social media. While it offers convenience and global connectivity, it has led to a decline in face-to-face conversations, raising concerns about its impact on relationships and mental health."
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "Summarize the following text in a few sentences: \n\nArtificial Intelligence (AI) has rapidly evolved over the past few decades, transforming various industries such as healthcare, finance, and transportation. Machine learning, a subset of AI, allows computers to learn from data and make decisions without explicit programming. This has led to the development of autonomous systems, like self-driving cars and advanced diagnostic tools. However, with the rise of AI, there are concerns about job displacement, privacy issues, and the ethical implications of decision-making by machines. Researchers and policymakers are working together to create frameworks that ensure AI benefits society while minimizing potential harms. \n\nSummary: ",
+    "response": " The text discusses how artificial intelligence has transformed various industries through machine learning and autonomous systems. However, there are concerns about job displacement, privacy issues, and ethical considerations related to the use of AI. Researchers and policymakers are working together to create frameworks that promote the responsible use of AI while minimizing potential harms.\n",
+    "latency": 1.273848295211792,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 54,
+    "tokens_per_second": 42.391233087156486,
+    "score": 0.2826086956521739,
+    "ground_truth": "AI, particularly machine learning, has revolutionized industries like healthcare and transportation, enabling technologies like self-driving cars. However, concerns about job loss, privacy, and ethics are driving efforts to create guidelines that maximize AI's benefits while addressing its risks."
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "Summarize the following text in a few sentences: \n\nIn schools today, the traditional method of classroom learning is increasingly being supplemented with technology. Many schools now use digital tools like tablets, online resources, and interactive whiteboards to enhance the learning experience. These tools can help students grasp complex concepts more effectively and engage in collaborative learning. However, there is a growing debate about the potential for technology to distract students or replace face-to-face teaching altogether. Some educators argue that while technology can enhance learning, it should not replace the essential human element of education. \n\nSummary: ",
+    "response": " The text discusses how schools are using technology like tablets and interactive whiteboards to supplement classroom learning, which can improve student engagement and understanding of complex concepts. However, there is concern that technology may distract students or replace traditional teaching methods altogether. Some educators believe that while technology can be helpful, it should not completely replace human interaction in education.\n",
+    "latency": 1.4116206169128418,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 60,
+    "tokens_per_second": 42.504338121114735,
+    "score": 0.37037037037037035,
+    "ground_truth": "Schools are integrating digital tools like tablets and online resources to improve learning, but concerns persist about technology distracting students or replacing traditional teaching methods. Many educators stress the importance of balancing technology with human interaction in education."
+  },
+  {
+    "prompt_id": 3,
+    "prompt": "Summarize the following text in a few sentences: \n\nClimate change is one of the most pressing challenges of our time, with rising temperatures, extreme weather events, and sea-level rise threatening ecosystems and human communities. Scientists have found overwhelming evidence that human activities, particularly the burning of fossil fuels, are contributing to the acceleration of global warming. In response, many countries are committing to reducing carbon emissions and transitioning to renewable energy sources. However, despite these efforts, the scale and urgency of the problem require immediate global action to mitigate further environmental damage and protect future generations. \n\nSummary: ",
+    "response": " Climate change is a major issue caused by human activities that threatens ecosystems and communities. Many countries are taking steps towards reducing carbon emissions and using renewable energy sources. However, urgent global action is needed to prevent further damage and protect the environment for future generations.\n",
+    "latency": 1.067519187927246,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 46,
+    "tokens_per_second": 43.09056035734227,
+    "score": 0.46511627906976744,
+    "ground_truth": "Climate change, driven by human activities like burning fossil fuels, is causing global warming, extreme weather, and rising sea levels. While many countries are working to reduce emissions and switch to renewable energy, urgent global action is needed to address the crisis and protect future generations."
+  },
+  {
+    "prompt_id": 4,
+    "prompt": "Summarize the following text in a few sentences: \n\nTechnology in education has transformed the learning experience, providing students with access to online courses, educational apps, and virtual classrooms. These tools offer personalized learning and the ability to connect with experts worldwide. However, not all students have equal access to these resources, creating a digital divide. Additionally, excessive screen time can lead to distractions and hinder social skills development. Educators are tasked with balancing technology use with traditional methods to ensure comprehensive learning. \n\nSummary: ",
+    "response": " Technology has improved education by providing personalized learning opportunities through online courses and educational apps. However, unequal access to these resources creates a digital divide. Moreover, excessive screen time can negatively impact social skills development. To address this, educators must balance technology with traditional methods for complete learning.\n",
+    "latency": 1.1733338832855225,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 48,
+    "tokens_per_second": 40.909071734630494,
+    "score": 0.1956521739130435,
+    "ground_truth": "Technology has enhanced education by offering personalized learning and global connections, but access inequalities and potential distractions remain challenges for effective use."
+  }
+]

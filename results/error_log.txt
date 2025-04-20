@@ -1,0 +1,5 @@
+Prompt ID: 6
+Reason: Unhandled error: Model returned an empty response.
+Model Answer: 
+Score: 0
+------------------------------------------------------------

@@ -1,0 +1,90 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "Write a function to solve the following problem: \n\n Write a fuction that takes a list of integers and returns the sum of all even numbers in the list\n \n Your solution (in Python): \n",
+    "response": " def find_sum_even_numbers(lst):\n  total = 0\n  for num in lst:\n    if num % 2 == 0:\n      total += num\n  return total\n",
+    "latency": 1.0278651714324951,
+    "memory_usage": 0.02734375,
+    "tokens_generated": 20,
+    "tokens_per_second": 19.45780492992752,
+    "score": 0.0,
+    "ground_truth": "def sum_even(numbers): \n    return sum(num for num in numbers if num % 2 == 0)"
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that takes a list of strings and returns a list of those strings that have more than 3 characters\n \n Your solution (in Python): \n",
+    "response": " def filter_strings(str_list):\n    return [s for s in str_list if len(s) > 3]\n\n\n",
+    "latency": 0.6634275913238525,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 12,
+    "tokens_per_second": 18.0878820189771,
+    "score": 0.12735952979479354,
+    "ground_truth": "def filter_long_strings(strings): \n    return [string for string in strings if len(string) > 3]"
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that takes a list of numbers and returns a new list with only the unique elements\n \n Your solution (in Python): \n",
+    "response": " def remove_duplicates(numbers):\n  return list(set(numbers))\n",
+    "latency": 0.47260522842407227,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 4,
+    "tokens_per_second": 8.463723546474965,
+    "score": 0.7523197619890014,
+    "ground_truth": "def unique_numbers(numbers): \n    return list(set(numbers))"
+  },
+  {
+    "prompt_id": 3,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that finds the most frequent element in a list.\n \n Your solution (in Python): \n",
+    "response": " def find_most_frequent(lst):\n  \"\"\"Function to find the most frequent element in a list\"\"\"\n  # Create a dictionary to keep track of each element and its frequency\n  freq_dict = {}\n  for elem in lst:\n    if elem not in freq_dict:\n      freq_dict[elem] = 1\n    else:\n      freq_dict[elem] += 1\n\n  # Find the element with the highest frequency\n  most_frequent = None\n  for elem, freq in freq_dict.items():\n    if most_frequent is None or freq > freq_dict[most_frequent]:\n      most_frequent = elem\n\n  # Return the most frequent element\n  return most_frequent\n\n# Example usage\nlst = [1, 2, 3, 4, 5, 1, 2, 3, 1]\nprint(find_most_frequent(lst))  # Output: 1\n```\n",
+    "latency": 4.912076234817505,
+    "memory_usage": 0.03515625,
+    "tokens_generated": 98,
+    "tokens_per_second": 19.950830425912745,
+    "score": 0.14278655793495035,
+    "ground_truth": "from collections import Counter\n\ndef most_frequent(lst): \n    return Counter(lst).most_common(1)[0][0]"
+  },
+  {
+    "prompt_id": 4,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that returns True if two given strings are rotations of each other.\n \n Your solution (in Python): \n",
+    "response": " def is_rotation(str1, str2):\n    if len(str1) != len(str2):\n        return False\n    else:\n        return str1 in str2+str2\n\n",
+    "latency": 0.9285955429077148,
+    "memory_usage": 0.0234375,
+    "tokens_generated": 14,
+    "tokens_per_second": 15.07653155017495,
+    "score": 0.024955814876540153,
+    "ground_truth": "def are_rotations(s1, s2): \n    return len(s1) == len(s2) and s1 in (s2 + s2)"
+  },
+  {
+    "prompt_id": 5,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function to find the maximum value in a binary tree.\n \n Your solution (in Python): \n",
+    "response": " Sure, I can help you with that! Here's the code for the function to find the maximum value in a binary tree using recursion in Python:\n```python\nclass Node:\n    def __init__(self, key):\n        self.left = None\n        self.right = None\n        self.val = key\n\ndef max_value(root):\n    if root is None:\n        return float('-inf')\n    else:\n        left_max = max_value(root.left)\n        right_max = max_value(root.right)\n\n        if root.val > left_max and root.val > right_max:\n            return root.val\n        else:\n            return max(left_max, right_max)\n```\nHere's an explanation of how the function works:\n- The `Node` class is used to represent a node in the binary tree.\n- The `max_value` function takes in the root node of the binary tree as its input.\n- If the root node is `None`, then there are no nodes in the tree, so the function returns negative infinity (`float('-inf')`).\n- Otherwise, the function recursively finds the maximum value in the left subtree and the right subtree of the current node using the same process.\n- Then, it compares the value of the current node with the maximum values found in its left and right subtrees.\n- If the value of the current node is greater than both the maximum values found in its left and right subtrees, then it becomes the new maximum value. Otherwise, the function returns the maximum of the two maximums found in its left and right subtrees.\nOverall, this function uses recursion to traverse the binary tree and find the maximum value in it.\n",
+    "latency": 9.318307399749756,
+    "memory_usage": 0.03125,
+    "tokens_generated": 240,
+    "tokens_per_second": 25.755750449533917,
+    "score": 0.2994896572736725,
+    "ground_truth": "def find_max(root): \n     if not root: \n   return float('-inf') \n   return max(root.val, find_max(root.left), find_max(root.right))"
+  },
+  {
+    "prompt_id": 6,
+    "prompt": "Write a function to solve the following problem: \n\n Create a function that checks if a string is a palindrome (reads the same forwards and backwards).\n \n Your solution (in Python): \n",
+    "response": " def is_palindrome(string):\n  reversed_string = string[::-1]\n  return string == reversed_string\n",
+    "latency": 0.6349589824676514,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 9,
+    "tokens_per_second": 14.174143918750712,
+    "score": 0.037176505049809246,
+    "ground_truth": "def is_palindrome(text):\n    text = text.lower().replace(' ', '')\n    return text == text[::-1]"
+  },
+  {
+    "prompt_id": 7,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function to find the factorial of a number.\n \n Your solution (in Python): \n",
+    "response": " Sure, I can help you with that! Here is the code for a function in Python that calculates the factorial of a number using recursion:\n\n```\ndef factorial(num):\n    if num == 1:\n        return 1\n    else:\n        return num * factorial(num - 1)\n```\n\nThis function takes a number `num` as an argument and checks if it is equal to 1. If it is, the function returns 1 (since 1! = 1). Otherwise, the function multiplies `num` with the result of calling itself with `num - 1` as the argument. This process continues until `num` reaches 1, at which point the function returns 1.\n\nFor example, if we call `factorial(5)`, the function will recursively calculate 5 * 4 * 3 * 2 * 1 = 120.\n",
+    "latency": 3.9158828258514404,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 124,
+    "tokens_per_second": 31.66591175338306,
+    "score": 0.1124679415475863,
+    "ground_truth": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)"
+  }
+]

@@ -270,10 +270,12 @@ class LLMBenchmark:
                 latencies = [r["latency"] for r in results if "latency" in r]
                 memories = [r["memory_usage"] for r in results if "memory_usage" in r]
                 scores = [r["score"] for r in results if "score" in r]
+                tps = [r["tokens_per_second"] for r in results if "tokens_per_second" in r]
                 summary[model][task_name] = {
                     "avg_latency": sum(latencies) / len(latencies),
                     "avg_memory_kb": sum(memories) / len(memories),
                     "avg_score": sum(scores) / len(scores) if scores else None,
+                    "tokens_per_second": sum(tps) / len(tps) if tps else None
                 }
         return summary
 

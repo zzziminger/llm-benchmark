@@ -1,0 +1,101 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "Question: What is the capital of France?\nAnswer: ",
+    "response": " Paris is not the capital of France. The capital city of France is actually Paris, but when you asked for the capital, it was interpreted as the administrative capital which is indeed Paris. However, if we're referring to the political capital, the seat of government is also Paris. I apologize for any confusion caused.",
+    "latency": 5.623947620391846,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 54,
+    "tokens_per_second": 9.60179639728536,
+    "score": 1,
+    "ground_truth": "Paris"
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "Question: Who wrote 'Romeo and Juliet'?\nAnswer: ",
+    "response": " William Shakespeare wrote Romeo and Juliet. This tragic play is one of his most famous works, showcasing the power of love, family feuds, and the tragic consequences that can result from them. It's a timeless classic, demonstrating the depth and complexity of human emotions in an engaging narrative style that continues to resonate with audiences today.",
+    "latency": 3.713141918182373,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 56,
+    "tokens_per_second": 15.081567371767106,
+    "score": 1,
+    "ground_truth": "William Shakespeare"
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "Question: What is the first letter of the alphabet?\nAnswer: ",
+    "response": " The first letter of the alphabet is \"A\".",
+    "latency": 0.6707484722137451,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 8,
+    "tokens_per_second": 11.92697461329538,
+    "score": 1,
+    "ground_truth": "A"
+  },
+  {
+    "prompt_id": 3,
+    "prompt": "Question: How many days are in a week?\nAnswer: ",
+    "response": "7 days",
+    "latency": 0.22773528099060059,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 2,
+    "tokens_per_second": 8.782126297253638,
+    "score": 0,
+    "ground_truth": "Seven"
+  },
+  {
+    "prompt_id": 4,
+    "prompt": "Question: How many sides does a triangle have?\nAnswer: ",
+    "response": "3 sides. A triangle is a polygon with three edges or sides, three angles, and three vertices.",
+    "latency": 1.205585241317749,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 17,
+    "tokens_per_second": 14.101035262689823,
+    "score": 1,
+    "ground_truth": "Three"
+  },
+  {
+    "prompt_id": 5,
+    "prompt": "Question: How many letters are in the English alphabet?\nAnswer: ",
+    "response": "26 letters, excluding spaces. The English alphabet consists of 26 letters - 25 regular letters (A-Z) and one special letter (space).",
+    "latency": 1.864774227142334,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 21,
+    "tokens_per_second": 11.26141690202431,
+    "score": 1,
+    "ground_truth": "26"
+  },
+  {
+    "prompt_id": 6,
+    "prompt": "Question: What is the capital of Canada?\nAnswer: ",
+    "response": " Ottawa",
+    "latency": 0.2111661434173584,
+    "memory_usage": 0.0234375,
+    "tokens_generated": 1,
+    "tokens_per_second": 4.7356076301661405,
+    "score": 1,
+    "ground_truth": "Ottawa"
+  },
+  {
+    "prompt_id": 7,
+    "prompt": "Question: Which continent is the Sahara Desert in?\nAnswer: ",
+    "response": " Africa",
+    "latency": 0.17464566230773926,
+    "memory_usage": 0.0234375,
+    "tokens_generated": 1,
+    "tokens_per_second": 5.725879399385953,
+    "score": 1,
+    "ground_truth": "Africa"
+  },
+  {
+    "prompt_id": 8,
+    "prompt": "Question: Who was the first president of the United States?\nAnswer: ",
+    "response": " George Washington was the first President of the United States. He served from 1789 to 1797.",
+    "latency": 1.399803876876831,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 16,
+    "tokens_per_second": 11.430172657971458,
+    "score": 1,
+    "ground_truth": "George Washington"
+  }
+]

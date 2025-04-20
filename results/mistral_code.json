@@ -1,0 +1,90 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "Write a function to solve the following problem: \n\n Write a fuction that takes a list of integers and returns the sum of all even numbers in the list\n \n Your solution (in Python): \n",
+    "response": " Here is a simple Python function that solves the problem you've described. This function uses a list comprehension to create a new list that only contains the even numbers from the input list, then it calculates the sum of those values using the `sum()` built-in function:\n\n```python\ndef sum_even(numbers):\n    return sum([n for n in numbers if n % 2 == 0])\n```\n\nYou can use this function like this:\n\n```python\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]\nresult = sum_even(numbers)\nprint(result)  # Output: 12\n```\n\nThis function should work for any list of integers as input.",
+    "latency": 9.158140659332275,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 100,
+    "tokens_per_second": 10.919247008736274,
+    "score": 0.1843427690896393,
+    "ground_truth": "def sum_even(numbers): \n    return sum(num for num in numbers if num % 2 == 0)"
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that takes a list of strings and returns a list of those strings that have more than 3 characters\n \n Your solution (in Python): \n",
+    "response": " Here's a simple Python function that does what you asked for. It filters out the strings in the input list that have three or fewer characters, returning only the longer ones:\n\n```python\ndef filter_longer_strings(input_list):\n    return [word for word in input_list if len(word) > 3]\n\n# Example usage\nmy_list = [\"apple\", \"banana\", \"cat\", \"dog\", \"hi\"]\nfiltered_list = filter_longer_strings(my_list)\nprint(filtered_list)  # Output: ['apple', 'banana']\n```\n\nThis function uses a list comprehension to create the filtered list, which is more concise and readable in Python. The `len()` function is used to check the length of each string in the input list. If the string has more than 3 characters, it's added to the new filtered_list, otherwise it's skipped over.",
+    "latency": 10.818828821182251,
+    "memory_usage": 0.0234375,
+    "tokens_generated": 116,
+    "tokens_per_second": 10.722047822115726,
+    "score": 0.038431464450811505,
+    "ground_truth": "def filter_long_strings(strings): \n    return [string for string in strings if len(string) > 3]"
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that takes a list of numbers and returns a new list with only the unique elements\n \n Your solution (in Python): \n",
+    "response": " Here's a simple Python function using the built-in `set` data structure which allows for fast lookup and removal of duplicates:\n\n```python\ndef unique_list(lst):\n    return list(set(lst))\n\n# Example usage:\nnumbers = [1, 2, 3, 4, 5, 2, 6, 7, 3, 8, 9, 5]\nprint(unique_list(numbers))  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]\n```\n\nThis function takes a list as input and returns a new list containing only the unique elements from the original list. It works by converting the input list into a set first (since sets only allow unique values), then converting it back into a list again to preserve the ordering of the unique elements. The time complexity of this solution is O(n) due to the linear traversal required for both creating the set and constructing the new list.",
+    "latency": 11.829760074615479,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 133,
+    "tokens_per_second": 11.242831567260092,
+    "score": 0.36337161940563856,
+    "ground_truth": "def unique_numbers(numbers): \n    return list(set(numbers))"
+  },
+  {
+    "prompt_id": 3,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that finds the most frequent element in a list.\n \n Your solution (in Python): \n",
+    "response": " Here is a simple and efficient Python function that uses the built-in `collections.Counter` class to find the most frequent element in a given list:\n\n```python\nfrom collections import Counter\n\ndef find_most_frequent(lst):\n    freq = Counter(lst)\n    return freq.most_common(1)[0][0]\n\n# Test cases\nprint(find_most_frequent([1, 2, 3, 2, 5, 2, 7, 2, 8]))  # Output: 2\nprint(find_most_frequent(['a', 'b', 'c', 'a', 'd', 'a', 'e']))  # Output: a\n```\n\nThis function creates a dictionary of frequencies for each element in the input list using `Counter`. Then, it selects the most common item by calling `most_common(1)`, which returns a list containing the most frequent item and its frequency as a tuple. Finally, it extracts the first element of that tuple (the most frequent item). This method is efficient because it only requires a single pass through the input data and uses built-in functions for frequency counting.",
+    "latency": 13.48172664642334,
+    "memory_usage": 0.01171875,
+    "tokens_generated": 138,
+    "tokens_per_second": 10.236077590002981,
+    "score": 0.22834594078382706,
+    "ground_truth": "from collections import Counter\n\ndef most_frequent(lst): \n    return Counter(lst).most_common(1)[0][0]"
+  },
+  {
+    "prompt_id": 4,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function that returns True if two given strings are rotations of each other.\n \n Your solution (in Python): \n",
+    "response": " Here is a Python function that checks if two given strings are rotations of each other:\n\n```python\ndef is_rotation(str1, str2):\n    # If the length of both strings is not equal, they cannot be rotations of each other.\n    if len(str1) != len(str2):\n        return False\n\n    # Create a dictionary to store the characters and their counts in str1.\n    char_count = {}\n    for char in str1:\n        if char not in char_count:\n            char_count[char] = 0\n        char_count[char] += 1\n\n    # Check if the total count of characters in str2 matches the expected count based on str1.\n    total_count = sum(char_count.values())\n    for char in str2:\n        if char not in char_count or char_count[char] <= 0:\n            return False\n        char_count[char] -= 1\n        if char_count[char] < 0:\n            return False\n        total_count -= 1\n    # If all characters in str2 have been checked and the total count of characters matches, then they are rotations.\n    return total_count == 0\n```\n\nThis function creates a dictionary to store the characters and their counts in the first string. Then it iterates through the second string, checking if each character is present in the dictionary with the correct count. If so, it decreases the count of that character. At the end, if the total count of characters matches, then they are rotations of each other.",
+    "latency": 18.170592308044434,
+    "memory_usage": 0,
+    "tokens_generated": 208,
+    "tokens_per_second": 11.447067683529216,
+    "score": 0.012262542896601725,
+    "ground_truth": "def are_rotations(s1, s2): \n    return len(s1) == len(s2) and s1 in (s2 + s2)"
+  },
+  {
+    "prompt_id": 5,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function to find the maximum value in a binary tree.\n \n Your solution (in Python): \n",
+    "response": " Here is a simple recursive function in Python that finds the maximum value in a binary tree:\n\n```python\nclass TreeNode:\n    def __init__(self, x):\n        self.val = x\n        self.left = None\n        self.right = None\n\ndef find_maximum(node):\n    if node is None:\n        return float('-inf')\n\n    left_max = find_maximum(node.left)\n    right_max = find_maximum(node.right)\n\n    return max(left_max, right_max, node.val)\n\n# Example usage\nroot = TreeNode(10)\nroot.left = TreeNode(2)\nroot.right = TreeNode(15)\nroot.left.left = TreeNode(4)\nroot.right.right = TreeNode(7)\n\nprint(find_maximum(root))  # Output: 15\n```\n\nIn this example, we define a `TreeNode` class and create a binary tree as an instance of it. The `find_maximum()` function is then defined recursively to traverse the tree, finding the maximum value by comparing the current node's value with the maximum values found in its left and right subtrees. If either subtree does not exist (i.e., they are `None`), we assume that the maximum value in that subtree is less than any other possible number, so we return a very small negative number (`float('-inf')`) to ensure that it gets overwritten if found later.\n\nThe example usage at the end of the code demonstrates how to create and search for the maximum value in the given binary tree.",
+    "latency": 19.057974576950073,
+    "memory_usage": 0.0234375,
+    "tokens_generated": 191,
+    "tokens_per_second": 10.022051358542978,
+    "score": 0.35587786423891393,
+    "ground_truth": "def find_max(root): \n     if not root: \n   return float('-inf') \n   return max(root.val, find_max(root.left), find_max(root.right))"
+  },
+  {
+    "prompt_id": 6,
+    "prompt": "Write a function to solve the following problem: \n\n Create a function that checks if a string is a palindrome (reads the same forwards and backwards).\n \n Your solution (in Python): \n",
+    "response": " Here's a simple Python function to check if a given string is a palindrome:\n\n```python\ndef is_palindrome(s):\n    s = s.lower()  # Convert the string to lowercase for case-insensitive comparison\n    reversed_s = s[::-1]  # Reverse the string\n    if s == reversed_s:\n        return True\n    else:\n        return False\n```\n\nThis function first converts the input string to lowercase using the `lower()` method. Then it creates a reversed version of the original string by using slicing (`[::-1]`) and compares the original string with the reversed one. If they are equal, the function returns `True`, indicating that the string is a palindrome; otherwise, it returns `False`.\n\nHere's an example of how you can use this function:\n\n```python\nprint(is_palindrome(\"A man a plan a canal Panama\"))  # True\nprint(is_palindrome(\"hello world\"))  # False\n```",
+    "latency": 12.2917320728302,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 126,
+    "tokens_per_second": 10.250792911318982,
+    "score": 0.03767520646378993,
+    "ground_truth": "def is_palindrome(text):\n    text = text.lower().replace(' ', '')\n    return text == text[::-1]"
+  },
+  {
+    "prompt_id": 7,
+    "prompt": "Write a function to solve the following problem: \n\n Write a function to find the factorial of a number.\n \n Your solution (in Python): \n",
+    "response": " Here is a simple recursive solution for finding the factorial of a number in Python:\n\n```python\ndef factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n-1)\n```\n\nThis function will calculate the factorial of any non-negative integer `n`. If `n` is 0 or 1, it returns 1; otherwise, it multiplies `n` by the factorial of `n - 1`, and so on until reaching 0 or 1.\n\nFor example:\n\n```python\nprint(factorial(5))  # Output: 120\n```",
+    "latency": 8.102137804031372,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 81,
+    "tokens_per_second": 9.997361432151514,
+    "score": 0.19311280975901673,
+    "ground_truth": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)"
+  }
+]

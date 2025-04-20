@@ -1,0 +1,101 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "Question: What is the capital of France?\nAnswer: ",
+    "response": "The answer is Paris!",
+    "latency": 5.090261697769165,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 4,
+    "tokens_per_second": 0.7858142149652192,
+    "score": 1,
+    "ground_truth": "Paris"
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "Question: Who wrote 'Romeo and Juliet'?\nAnswer: ",
+    "response": "William Shakespeare!",
+    "latency": 0.6271255016326904,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 2,
+    "tokens_per_second": 3.1891543156722193,
+    "score": 1,
+    "ground_truth": "William Shakespeare"
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "Question: What is the first letter of the alphabet?\nAnswer: ",
+    "response": "The first letter of the alphabet is \"A\".",
+    "latency": 1.238779067993164,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 8,
+    "tokens_per_second": 6.4579715678923195,
+    "score": 1,
+    "ground_truth": "A"
+  },
+  {
+    "prompt_id": 3,
+    "prompt": "Question: How many days are in a week?\nAnswer: ",
+    "response": "A simple one!\n\nThere are 7 days in a week.",
+    "latency": 1.533865213394165,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 10,
+    "tokens_per_second": 6.5194776651018875,
+    "score": 0,
+    "ground_truth": "Seven"
+  },
+  {
+    "prompt_id": 4,
+    "prompt": "Question: How many sides does a triangle have?\nAnswer: ",
+    "response": "Answer: 3",
+    "latency": 0.6611907482147217,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 2,
+    "tokens_per_second": 3.0248457126785144,
+    "score": 0,
+    "ground_truth": "Three"
+  },
+  {
+    "prompt_id": 5,
+    "prompt": "Question: How many letters are in the English alphabet?\nAnswer: ",
+    "response": "Easy one!\n\nThere are 26 letters in the modern English alphabet.",
+    "latency": 1.6026172637939453,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 11,
+    "tokens_per_second": 6.863772310775701,
+    "score": 1,
+    "ground_truth": "26"
+  },
+  {
+    "prompt_id": 6,
+    "prompt": "Question: What is the capital of Canada?\nAnswer: ",
+    "response": "Ottawa!",
+    "latency": 0.6936206817626953,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 1,
+    "tokens_per_second": 1.4417101829471177,
+    "score": 1,
+    "ground_truth": "Ottawa"
+  },
+  {
+    "prompt_id": 7,
+    "prompt": "Question: Which continent is the Sahara Desert in?\nAnswer: ",
+    "response": "Africa! The Sahara Desert is located across several countries in North Africa, covering most of Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, and Tunisia.",
+    "latency": 4.013021469116211,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 25,
+    "tokens_per_second": 6.229719973440799,
+    "score": 1,
+    "ground_truth": "Africa"
+  },
+  {
+    "prompt_id": 8,
+    "prompt": "Question: Who was the first president of the United States?\nAnswer: ",
+    "response": "George Washington! He was indeed the first President of the United States, serving from 1789 to 1797.",
+    "latency": 2.7933340072631836,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 17,
+    "tokens_per_second": 6.085917386104513,
+    "score": 1,
+    "ground_truth": "George Washington"
+  }
+]

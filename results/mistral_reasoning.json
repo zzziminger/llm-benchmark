@@ -1,0 +1,35 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "John is taller than Mary. Mary is taller than Sue. Sue is taller than Bill. \n\nQuestion: Who is the tallest person?\n\nAnswer:  ",
+    "response": " John is the tallest person, based on the given information. Here's why:\n\n1. We know that John > Mary. This means John is taller than Mary.\n2. We also know that Mary > Sue. So, Mary is taller than Sue.\n3. And we know that Sue > Bill. That makes Sue taller than Bill.\n4. Now, if we compare the heights of people mentioned in pairs (John and Mary, then Mary and Sue), we find that each person is taller than the other. Therefore, based on transitive properties, John must be taller than everyone else.",
+    "latency": 6.730850458145142,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 95,
+    "tokens_per_second": 14.114115384191686,
+    "score": 0.385899814471243,
+    "ground_truth": "John is the tallest person"
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "All mammals are warm-blooded. Whales are mammals. \n\nQuestion: Are whales warm-blooded?\n\nAnswer:  ",
+    "response": " Yes, whales are warm-blooded.",
+    "latency": 0.6215896606445312,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 4,
+    "tokens_per_second": 6.4351134731751625,
+    "score": 1.3125,
+    "ground_truth": "Yes, whales are warm-blooded"
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "If it rains, the ground gets wet. The ground is wet. \n\nQuestion: Did it necessarily rain?\n\nAnswer:  ",
+    "response": " Yes, given that the ground is currently wet and one of the only known causes for the ground to become wet is rain, it can be inferred that it most likely rained at some point recently. However, this conclusion is not absolutely definitive as other factors such as irrigation or floodwater could also cause the ground to get wet, but these are less common than rain in most situations.",
+    "latency": 4.0709617137908936,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 69,
+    "tokens_per_second": 16.949311944215502,
+    "score": 0.06732117812061711,
+    "ground_truth": "No, it did not necessarily rain."
+  }
+]

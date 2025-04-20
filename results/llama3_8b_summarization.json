@@ -1,0 +1,57 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "Summarize the following text in a few sentences: \n\nIn recent years, there has been a growing concern about the impact of technology on social interactions. With the rise of smartphones, social media, and online communication platforms, face-to-face conversations are becoming less frequent. While technology has undoubtedly brought many conveniences, such as easier access to information and improved global connectivity, it has also led to a decrease in meaningful personal interactions. Many people are spending more time online, engaging in virtual interactions, which often lack the emotional depth and richness of in-person communication. This shift has raised questions about the long-term effects on relationships, mental health, and overall well-being. \n\nSummary: ",
+    "response": "Here is a summary of the text:\n\nThe increasing use of technology, such as smartphones and social media, has led to a decline in face-to-face conversations and meaningful personal interactions. While technology offers many conveniences, it has also resulted in virtual interactions that lack emotional depth and richness compared to in-person communication. This shift has raised concerns about its impact on relationships, mental health, and overall well-being.",
+    "latency": 8.548151016235352,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 67,
+    "tokens_per_second": 7.837952309540167,
+    "score": 0.38596491228070173,
+    "ground_truth": "Technology has made social interactions less frequent, as more people rely on smartphones and social media. While it offers convenience and global connectivity, it has led to a decline in face-to-face conversations, raising concerns about its impact on relationships and mental health."
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "Summarize the following text in a few sentences: \n\nArtificial Intelligence (AI) has rapidly evolved over the past few decades, transforming various industries such as healthcare, finance, and transportation. Machine learning, a subset of AI, allows computers to learn from data and make decisions without explicit programming. This has led to the development of autonomous systems, like self-driving cars and advanced diagnostic tools. However, with the rise of AI, there are concerns about job displacement, privacy issues, and the ethical implications of decision-making by machines. Researchers and policymakers are working together to create frameworks that ensure AI benefits society while minimizing potential harms. \n\nSummary: ",
+    "response": "Here is a summary of the text in a few sentences:\n\nArtificial Intelligence (AI) has rapidly advanced in recent decades, transforming various industries such as healthcare, finance, and transportation. Machine learning, a subset of AI, allows computers to learn from data and make decisions without explicit programming, leading to autonomous systems like self-driving cars and diagnostic tools. However, concerns about job displacement, privacy issues, and ethical implications of machine decision-making have led researchers and policymakers to work together on frameworks that balance the benefits of AI with its potential harms.",
+    "latency": 11.039736032485962,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 90,
+    "tokens_per_second": 8.152368837005021,
+    "score": 0.21052631578947367,
+    "ground_truth": "AI, particularly machine learning, has revolutionized industries like healthcare and transportation, enabling technologies like self-driving cars. However, concerns about job loss, privacy, and ethics are driving efforts to create guidelines that maximize AI's benefits while addressing its risks."
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "Summarize the following text in a few sentences: \n\nIn schools today, the traditional method of classroom learning is increasingly being supplemented with technology. Many schools now use digital tools like tablets, online resources, and interactive whiteboards to enhance the learning experience. These tools can help students grasp complex concepts more effectively and engage in collaborative learning. However, there is a growing debate about the potential for technology to distract students or replace face-to-face teaching altogether. Some educators argue that while technology can enhance learning, it should not replace the essential human element of education. \n\nSummary: ",
+    "response": "Here is a summary of the text:\n\nThe traditional classroom setting is being supplemented with technology in many schools today. Digital tools like tablets and online resources are helping students learn more effectively and engage in collaborative activities. However, there is a debate about whether technology can distract or replace face-to-face teaching, with some educators arguing that while it has benefits, it should not replace the essential human element of education.",
+    "latency": 8.240981578826904,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 71,
+    "tokens_per_second": 8.615478547169229,
+    "score": 0.3728813559322034,
+    "ground_truth": "Schools are integrating digital tools like tablets and online resources to improve learning, but concerns persist about technology distracting students or replacing traditional teaching methods. Many educators stress the importance of balancing technology with human interaction in education."
+  },
+  {
+    "prompt_id": 3,
+    "prompt": "Summarize the following text in a few sentences: \n\nClimate change is one of the most pressing challenges of our time, with rising temperatures, extreme weather events, and sea-level rise threatening ecosystems and human communities. Scientists have found overwhelming evidence that human activities, particularly the burning of fossil fuels, are contributing to the acceleration of global warming. In response, many countries are committing to reducing carbon emissions and transitioning to renewable energy sources. However, despite these efforts, the scale and urgency of the problem require immediate global action to mitigate further environmental damage and protect future generations. \n\nSummary: ",
+    "response": "Here is a summary of the text in a few sentences:\n\nClimate change is a pressing global issue caused by human activities such as burning fossil fuels, leading to rising temperatures, extreme weather events, and sea-level rise. Despite efforts by some countries to reduce emissions and transition to renewable energy, the scale and urgency of the problem require immediate global action to mitigate further damage and protect future generations.",
+    "latency": 8.016098260879517,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 69,
+    "tokens_per_second": 8.607678917402568,
+    "score": 0.41818181818181815,
+    "ground_truth": "Climate change, driven by human activities like burning fossil fuels, is causing global warming, extreme weather, and rising sea levels. While many countries are working to reduce emissions and switch to renewable energy, urgent global action is needed to address the crisis and protect future generations."
+  },
+  {
+    "prompt_id": 4,
+    "prompt": "Summarize the following text in a few sentences: \n\nTechnology in education has transformed the learning experience, providing students with access to online courses, educational apps, and virtual classrooms. These tools offer personalized learning and the ability to connect with experts worldwide. However, not all students have equal access to these resources, creating a digital divide. Additionally, excessive screen time can lead to distractions and hinder social skills development. Educators are tasked with balancing technology use with traditional methods to ensure comprehensive learning. \n\nSummary: ",
+    "response": "Here is a summary of the text in a few sentences:\n\nTechnology has revolutionized education, providing students with online courses, apps, and virtual classrooms that offer personalized learning and global connections. However, not all students have equal access to these resources, creating a digital divide. Additionally, excessive screen time can be detrimental to social skills development.",
+    "latency": 7.017518758773804,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 56,
+    "tokens_per_second": 7.980028543562466,
+    "score": 0.13725490196078433,
+    "ground_truth": "Technology has enhanced education by offering personalized learning and global connections, but access inequalities and potential distractions remain challenges for effective use."
+  }
+]

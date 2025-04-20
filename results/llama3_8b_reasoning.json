@@ -1,0 +1,35 @@
+[
+  {
+    "prompt_id": 0,
+    "prompt": "John is taller than Mary. Mary is taller than Sue. Sue is taller than Bill. \n\nQuestion: Who is the tallest person?\n\nAnswer:  ",
+    "response": "Let's analyze the statements:\n\n1. John is taller than Mary.\n2. Mary is taller than Sue.\n3. Sue is taller than Bill.\n\nFrom statement 1, we know John > Mary.\nFrom statement 2, we know Mary > Sue.\nCombining these two inequalities, we get John > Mary > Sue.\n\nFrom statement 3, we know Sue > Bill.\nAdding this to the previous chain, we get John > Mary > Sue > Bill.\n\nSo, the tallest person is... **John**!",
+    "latency": 10.743329763412476,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 78,
+    "tokens_per_second": 7.26031888787749,
+    "score": 0.4062499999999999,
+    "ground_truth": "John is the tallest person"
+  },
+  {
+    "prompt_id": 1,
+    "prompt": "All mammals are warm-blooded. Whales are mammals. \n\nQuestion: Are whales warm-blooded?\n\nAnswer:  ",
+    "response": "Yes, whales are warm-blooded. The conclusion logically follows from the premises:\n\n1. All mammals are warm-blooded.\n2. Whales are mammals.\n\nSince whales fit the category of mammals, we can conclude that whales are indeed warm-blooded.",
+    "latency": 5.710032224655151,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 35,
+    "tokens_per_second": 6.129562605421858,
+    "score": 0.5050505050505051,
+    "ground_truth": "Yes, whales are warm-blooded"
+  },
+  {
+    "prompt_id": 2,
+    "prompt": "If it rains, the ground gets wet. The ground is wet. \n\nQuestion: Did it necessarily rain?\n\nAnswer:  ",
+    "response": "A classic example of a logical fallacy!\n\nThe correct answer is:\n\nNo, it did not necessarily rain.\n\nJust because the ground is wet does not mean that it rained. There are many other possible explanations for why the ground might be wet, such as flooding, irrigation, or even human error (e.g., someone poured water on the ground!).",
+    "latency": 7.799851179122925,
+    "memory_usage": 0.01953125,
+    "tokens_generated": 57,
+    "tokens_per_second": 7.307831738196,
+    "score": 0.2697274031563845,
+    "ground_truth": "No, it did not necessarily rain."
+  }
+]

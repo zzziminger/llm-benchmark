@@ -1,7 +1,7 @@
 import os
 import time
 from benchmark import LLMBenchmark  
-#from visualization import create_visualizations  
+from visualization import create_visualizations  
 from tasks import load_all_benchmarks 
 #from report import generate_report
 
@@ -29,7 +29,7 @@ def main():
     summary = benchmark.get_summary_statistics()
 
     # Generate visualizations based on the summary statistics
-    #create_visualizations(summary, results_dir="benchmark_results")
+    create_visualizations(summary, results_dir="benchmark_results")
 
     # Generate report
     #generate_report(summary, results)
