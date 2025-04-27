@@ -3,7 +3,7 @@
 In this project, we develop a robust system to benchmark Large Language Models (LLMs) running locally on our laptops. The system will evaluate the performance of three models ('phi', 'mistral', 'llama3:8b') across a range of tasks (Q&A, coding, summarization, reasoning) and display the results visually—featuring an intuitive interface that highlights the model's thought process in real-time.
 
 ## 📂 Directory Structure and Description
-
+```
 benchmark_framework/
   ├── benchmark.py         # Core benchmarking engine
   ├── tasks.py              # Task definitions and loader
@@ -16,7 +16,7 @@ data/
 results/
   └── (generated benchmark results)
 run_benchmark.py            # Main script to run benchmarks
-
+```
 
 ## 🚀 Quick Start
 
