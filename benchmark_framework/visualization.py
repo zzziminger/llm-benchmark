@@ -136,7 +136,8 @@ def create_performance_vs_speed_scatter(df, results_dir):
 
 
 def create_enhanced_radar_chart(df, results_dir):
-    metrics = ['avg_score', 'avg_latency', 'avg_memory_kb']
+    # Add tokens_per_second to metrics
+    metrics = ['avg_score', 'avg_latency', 'avg_memory_kb', 'tokens_per_second']
     models = df['Model'].unique()
     task_order = ['qa', 'code', 'summarization', 'reasoning']
 
@@ -144,6 +145,7 @@ def create_enhanced_radar_chart(df, results_dir):
         radar_data = df[df['Model'] == model].set_index('Task')[metrics]
         radar_data = radar_data.reindex(task_order).fillna(0.0)  # Fill missing tasks with 0
 
+        # Calculate angles for each axis
         angles = [n / float(len(metrics)) * 2 * pi for n in range(len(metrics))]
         angles += angles[:1]
 
@@ -168,6 +170,7 @@ def create_enhanced_radar_chart(df, results_dir):
 
 
 
+
 def create_enhanced_heatmap(summary, results_dir):
     rows = []
     for model, task_dict in summary.items():
@@ -176,19 +179,20 @@ def create_enhanced_heatmap(summary, results_dir):
             rows.append(row)
     df = pd.DataFrame(rows)
 
-    pivot_score = df.pivot(index="Model", columns="Task", values="avg_score")
-    pivot_latency = df.pivot(index="Model", columns="Task", values="avg_latency")
+    metrics = {
+        "avg_score": "Score Heatmap",
+        "avg_latency": "Latency Heatmap",
+        "avg_memory_kb": "Memory Usage Heatmap",
+        "tokens_per_second": "Tokens/sec Heatmap"
+    }
 
-    plt.figure(figsize=(10, 6))
-    sns.heatmap(pivot_score, annot=True, cmap="cividis", fmt=".2f")
-    plt.title("Score Heatmap")
-    plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "score_heatmap.png"))
-    plt.close()
+    for metric, title in metrics.items():
+        pivot = df.pivot(index="Model", columns="Task", values=metric)
 
-    plt.figure(figsize=(10, 6))
-    sns.heatmap(pivot_latency, annot=True, cmap="cividis", fmt=".2f")
-    plt.title("Latency Heatmap")
-    plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "latency_heatmap.png"))
-    plt.close()
+        plt.figure(figsize=(10, 6))
+        sns.heatmap(pivot, annot=True, cmap="cividis", fmt=".2f")
+        plt.title(title)
+        plt.tight_layout()
+        filename = f"{metric}_heatmap.png"
+        plt.savefig(os.path.join(results_dir, filename))
+        plt.close()
