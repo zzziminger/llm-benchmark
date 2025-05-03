@@ -23,29 +23,37 @@ All these three models are optimized so that their memory usage across tasks is 
 
 ## Example Responses
 ### Good Response
-**Prompt**: ```
+**Prompt**:
+```
 Question: What is the capital of France?
-Answer: ```
+Answer: 
+```
 
-**Response**: ```
-The answer is Paris!```
+**Response**:
+```
+The answer is Paris!
+```
 
 ### Bad Response
-**Prompt**: ```
+**Prompt**:
+```
 If it rains, the ground gets wet. The ground is wet. 
 
 Question: Did it necessarily rain?
 
-Answer:  ```
+Answer:  
+```
 
-**Response**: ```
+**Response**:
+```
 A classic example of a logical fallacy!
 
 The correct answer is:
 
 No, it did not necessarily rain.
 
-Just because the ground is wet does not mean that it rained. There are many other possible explanations for why the ground might be wet, such as flooding, irrigation, or even human error (e.g., someone poured water on the ground!).```
+Just because the ground is wet does not mean that it rained. There are many other possible explanations for why the ground might be wet, such as flooding, irrigation, or even human error (e.g., someone poured water on the ground!).
+```
 
 ## Conclusions and Recommendations
 No single model can universally outperform others in all tasks. Instead, the choice of the model should be based on task-specific requirements and performance priorities, such as memory and speed.
