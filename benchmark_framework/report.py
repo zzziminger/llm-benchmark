@@ -17,21 +17,13 @@ def generate_report(summary, output_dir='results'):
 
     # Executive Summary
     report.append("## Executive Summary\n")
-    report.append('''
-    In terms of overall performance, all three models are not widely differentiated. 
-    Users must choose a suitable one for each specific task and practical requirement. 
-    Mistral performs the best in QA and reasoning, while Llama3:8b specializes in coding and summarization. 
-    Both models offer higher task accuracy at the expense of latency. 
-    For contexts that emphasize efficiency, Phi is recommended due to its low latency and high TPS.\n
-    ''')
+    report.append("In terms of overall performance, all three models are not widely differentiated. Users must choose a suitable one for each specific task and practical requirement. Mistral performs the best in QA and reasoning, while Llama3:8b specializes in coding and summarization. Both models offer higher task accuracy at the expense of latency. For contexts that emphasize efficiency, Phi is recommended due to its low latency and high TPS.\n")
     report.append("\n")
 
     # Model Rankings
     report.append("## Model Rankings\n")
     report.append("![Performance Dashboard](../benchmark_results/performance_dashboard.png)\n")
-    report.append('''
-    Llama3:8b and Mistral perform higher task scores, but to obtain a faster response, we recommend Phi.\n
-    ''')
+    report.append("Llama3:8b and Mistral perform higher task scores, but to obtain a faster response, we recommend Phi.\n")
     report.append("\n")
 
     # Task-specific Performance Analysis
@@ -39,29 +31,18 @@ def generate_report(summary, output_dir='results'):
     report.append("![Score Heatmap](../benchmark_results/avg_score_heatmap.png)\n")
     report.append("![Latency Heatmap](../benchmark_results/avg_latency_heatmap.png)\n")
     report.append("![Memory Usage Heatmap](../benchmark_results/avg_memory_kb_heatmap.png)\n")
-    report.append('''
-    All models perform well in QA while Mistral is specialized in reasoning considering both performance and speed. 
-    For coding and summarization, their performances are similar, but Phi specializes in speed.\n
-    ''')
+    report.append("All models perform well in QA while Mistral is specialized in reasoning considering both performance and speed. For coding and summarization, their performances are similar, but Phi specializes in speed.\n")
 
     # Performance vs. Speed Trade-offs (scatter plot)
     report.append("## Performance vs. Speed Trade-offs\n")
     report.append("![Performance vs. Latency Scatter Plot](../benchmark_results/performance_vs_latency_scatter.png)\n")
-    report.append('''
-    From the scatter plot, there is a roughly reciprocal relationship between score and latency time, meaning that high score is correlated with low latency. 
-    However, apart from the three QA results, all the other points reside on the lower part of the graph, with no apparent trade-off. 
-    Nevertheless, we can still conclude that Phi delivers acceptable scores with low latency from the discovery that it dominates the left area.\n
-    ''')
+    report.append("From the scatter plot, there is a roughly reciprocal relationship between score and latency time, meaning that high score is correlated with low latency. However, apart from the three QA results, all the other points reside on the lower part of the graph, with no apparent trade-off. Nevertheless, we can still conclude that Phi delivers acceptable scores with low latency from the discovery that it dominates the left area.\n")
     report.append("\n")
 
     # Resource Usage Analysis
     report.append("## Resource Usage Analysis\n")
     report.append("![Memory Usage Comparison](../benchmark_results/memory_usage_comparison.png)\n")
-    report.append('''
-    All these three models are optimized so that their memory usage across tasks is around 0.05KB. 
-    On average, Mistral makes the lowest memory consumption. 
-    There is an outlier that Phi's average memory usage excels at nearly 0.07KB for QA tasks, probably due to Phi's high speed in generation.\n
-    ''')
+    report.append("All these three models are optimized so that their memory usage across tasks is around 0.05KB. On average, Mistral makes the lowest memory consumption. There is an outlier that Phi's average memory usage excels at nearly 0.07KB for QA tasks, probably due to Phi's high speed in generation.\n")
     report.append("\n")
 
     # Example Responses
@@ -72,7 +53,7 @@ def generate_report(summary, output_dir='results'):
     report.append("### Good Response\n")
     for result in data:
         if result['score'] >= 1:
-            report.append(f"'''**Prompt**: {result['prompt']}\n**Response**: {result['response']}\n'''")
+            report.append(f'''**Prompt**: {result['prompt']}\n**Response**: {result['response']}\n''')
             report.append("\n")
             break
 
@@ -81,7 +62,7 @@ def generate_report(summary, output_dir='results'):
     report.append("### Bad Response\n")
     for result in data:
         if result['score'] < 0.3:
-            report.append(f"**Prompt**: {result['prompt']}\n**Response**: {result['response']}\n")
+            report.append(f'''**Prompt**: {result['prompt']}\n**Response**: {result['response']}\n''')
             report.append("\n")
             break
 
