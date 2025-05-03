@@ -3,7 +3,7 @@ import time
 from benchmark import LLMBenchmark  
 from visualization import create_visualizations  
 from tasks import load_all_benchmarks 
-#from report import generate_report
+from report import generate_report
 
 #run 10 times and average the results
 def average_summaries(summary_list):
@@ -58,7 +58,7 @@ def main():
     create_visualizations(avg_summary, results_dir="benchmark_results")
 
     # Generate report
-    #generate_report(summary, results)
+    generate_report(avg_summary)
     
     print(" Benchmarking completed with averaged results.")
     print(" Results saved in: benchmark_results/")
