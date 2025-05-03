@@ -23,24 +23,26 @@ All these three models are optimized so that their memory usage across tasks is 
 
 ## Example Responses
 ### Good Response
-**Prompt**: 
-```Question: What is the capital of France?
+**Prompt**: ```
+Question: What is the capital of France?
 Answer: 
 ```
-**Response**: 
-```The answer is Paris!
+
+**Response**: ```
+The answer is Paris!
 ```
 
 ### Bad Response
-**Prompt**: 
-```If it rains, the ground gets wet. The ground is wet. 
+**Prompt**: ```
+If it rains, the ground gets wet. The ground is wet. 
 
 Question: Did it necessarily rain?
 
 Answer:  
 ```
-**Response**: 
-```A classic example of a logical fallacy!
+
+**Response**: ```
+A classic example of a logical fallacy!
 
 The correct answer is:
 
