@@ -53,10 +53,7 @@ def generate_report(summary, output_dir='results'):
     report.append("### Good Response\n")
     for result in data:
         if result['score'] >= 1:
-            report.append('''
-                          **Prompt**: {result['prompt']}\n
-                          **Response**: {result['response']}\n
-                          ''')
+            report.append(f"```**Prompt**: {result['prompt']}\n**Response**: {result['response']}\n```")
             report.append("\n")
             break
 
@@ -65,10 +62,7 @@ def generate_report(summary, output_dir='results'):
     report.append("### Bad Response\n")
     for result in data:
         if result['score'] < 0.3:
-            report.append('''
-                          **Prompt**: {result['prompt']}\n
-                          **Response**: {result['response']}\n
-                          ''')
+            report.append(f"```**Prompt**: {result['prompt']}\n**Response**: {result['response']}\n```")
             report.append("\n")
             break
 
